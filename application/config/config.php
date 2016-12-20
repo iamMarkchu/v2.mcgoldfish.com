@@ -545,7 +545,8 @@ $config['nav_list'] = [
                       'icon' => '<i class="fa fa-music" aria-hidden="true"></i>'
     				],
     			   ];
-define('VER', '20161220');
+define('VER', '2016122001');
+define('SITE_FULL_NAME', 'Mcgoldfish');
 $config['default_css'] = [
 				'/public/css/main_v2.css?ver'.VER,
 				'/public/css/font-awesome/css/font-awesome.min.css',

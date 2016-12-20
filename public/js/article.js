@@ -1,11 +1,11 @@
 $(function(){
 	 SyntaxHighlighter.autoloader(
-		    ['js','jscript','javascript','/plugins/syntaxhighlighter/scripts/shBrushJScript.js'],
-		    ['bash','shell','/plugins/syntaxhighlighter/scripts/shBrushBash.js'],
-		    ['css','/plugins/syntaxhighlighter/scripts/shBrushCss.js'],
-		    ['xml','html','/plugins/syntaxhighlighter/scripts/shBrushXml.js'],
-		    ['sql','/plugins/syntaxhighlighter/scripts/shBrushSql.js'],
-		    ['php','/plugins/syntaxhighlighter/scripts/shBrushPhp.js']
+		    ['js','jscript','javascript','/public/plugins/syntaxhighlighter/scripts/shBrushJScript.js'],
+		    ['bash','shell','/public/plugins/syntaxhighlighter/scripts/shBrushBash.js'],
+		    ['css','/public/plugins/syntaxhighlighter/scripts/shBrushCss.js'],
+		    ['xml','html','/public/plugins/syntaxhighlighter/scripts/shBrushXml.js'],
+		    ['sql','/public/plugins/syntaxhighlighter/scripts/shBrushSql.js'],
+		    ['php','/public/plugins/syntaxhighlighter/scripts/shBrushPhp.js']
 	    ); 
 	SyntaxHighlighter.all();
 	$('.comment-submit').click(function(){

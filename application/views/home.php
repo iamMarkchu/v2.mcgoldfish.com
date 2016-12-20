@@ -6,17 +6,16 @@
 				<?php $this->load->view('recommand_article');?>
 			</section>
 			<aside>
-				<{include file="block_category_list.html"}>
-				<{include file="block_tag_list.html"}>
-				<{include file="block_new_article.html"}>
-				<{include file="block_friend_link.html"}>
+				<?php $this->load->view('category_list', $hot_category);?>
+				<?php $this->load->view('tag_list', $hot_tag);?>
+				<?php $this->load->view('new_article_list', $new_article_list);?>
+				<?php $this->load->view('friend_link_list');?>
 			</aside>
 			<div class="clear-fix"></div>
 	    </div>   
 	</main>
-	<{include file="block_footer.html"}>
-	<{include file="block_login.html"}>
+	<?php $this->load->view('footer');?>
 	<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-	<script src="/js/app.js?ver=<{$smarty.const.VER}>"></script>
+	<script src="<?php echo base_url('/public/js/app.js?ver='.VER) ?>"></script>
 </body>
 </html>

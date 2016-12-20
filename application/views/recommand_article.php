@@ -1,22 +1,54 @@
-<{foreach from=$articleList item=item}>
-  <div class="col-xs-12 col-lg-12 my-recommand-block">
-    <h4><a href="<{$item.requestpath}>"><!-- <i class="glyphicon glyphicon-music"> --></i> <{$item.title}></a></h4>
-    <a href="<{$item.requestpath}>" class="my-img-link">
-        <img src="<{$smarty.const.IMG_URL}>/article/2016-09-01/57c80f26310c4.png" class="thumbnail" alt="">
-    </a>
-    <p class="my-article-desc less">
-      <{$item.shortDesc}>
-    </p>
-    <p class="user-message">
-      <i class="glyphicon glyphicon-user"></i><{$item.addeditor}>&nbsp;&nbsp;
-      <i class="glyphicon glyphicon-time"></i><{$item.addtime|format_date_V2}>&nbsp;&nbsp;
-      <i class="glyphicon glyphicon-eye-open"></i><{$item.clickcount}>&nbsp;&nbsp;
-      <{if is_array($item.tagInfo) && count($item.tagInfo)>0}>
-        <i class="glyphicon glyphicon-tag"></i>
-        <{foreach from=$item.tagInfo item=item1}>
-          <a href="<{$item1.requestpath}>"><{$item1.displayname}></a>
-        <{/foreach}>
-      <{/if}>
-    </p>
-  </div>
-<{/foreach}>
+<ul class="article-list in-home">
+  <?php foreach($recommand_list as $article): ?>
+  <li class="panel panel-test">
+    <div class="panel-heading">
+      <?php if(is_array($article['tag_info']) && count($article['tag_info'])>0):?>
+      <ul class="ar-label">
+        <?php foreach($article['tag_info'] as $k => $v):?>
+        <li class="ar-label-<?php echo $k+1;?>">
+          <a href="<?php echo base_url('/tag/'.$v['id']);?>" title="">
+            <?php echo $v['displayname'];?>
+          </a>
+        </li>
+        <?php endforeach;?>
+      </ul>
+      <?php endif;?>
+      <a href="<?php echo base_url('/article/'.$article['id']);?>" class="ar-cover">
+        <img src="http://img.mcgoldfish.com<?php echo $article['image'];?>" alt="" width="250" height="250" />
+      </a>
+    </div>
+    <div class="panel-body">
+      <h2>
+        <a href="<?php echo base_url('/article/'.$article['id']);?>" class="data-article-url">
+          <?php echo $article['title']?>
+        </a>
+      </h2>
+    </div>
+    <div class="panel-footer">
+      <ul class="pull-left user-info">
+        <li>
+          <i class="fa fa-user-circle" aria-hidden="true"></i>
+          <span>
+            <?php echo $article['addeditor'];?>
+          </span>
+        </li>
+        <li>
+          <i class="fa fa-clock-o" aria-hidden="true"></i>
+          <span><?php echo date('m-d', strtotime($article['addtime'])); ?></span>
+        </li>
+      </ul>
+      <ul class="pull-right user-info">
+        <li class="hot-comment">
+          <i class="fa fa-commenting" aria-hidden="true"></i>
+          <span class="mes"><?php echo $article['commentcount'];?></span>
+        </li>
+        <li class="good-vote" data-id="<?php echo $article['id']?>">
+          <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+          <span class="vote"><?php echo $article['votecount'] ?></span>   
+        </li>
+      </ul>               
+      <div class="clear-fix"></div>
+    </div>
+  </li>
+  <?php endforeach; ?>
+</ul>
