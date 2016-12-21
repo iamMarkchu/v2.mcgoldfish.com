@@ -548,9 +548,16 @@ $config['nav_list'] = [
 define('VER', '2016122001');
 define('SITE_FULL_NAME', 'Mcgoldfish');
 $config['default_css'] = [
-				'/public/css/main_v2.css?ver'.VER,
-				'/public/css/font-awesome/css/font-awesome.min.css',
-				];
+							'/public/css/main_v2.css?ver'.VER,
+							'/public/css/font-awesome/css/font-awesome.min.css',
+						];
+$config['default_js'] = [
+							'header' => [],
+							'footer' => [
+										'/public/plugins/jquery/dist/jquery.min.js',
+										'/public/js/app.js?ver='.VER,
+							],
+						];
 
 
 

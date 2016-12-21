@@ -38,7 +38,7 @@
 								<?php foreach($article_info->tag_info as $k => $v):?>
 									<li>
 										<?php if($k == 0):?><i class="fa fa-tags" aria-hidden="true"></i><?php endif;?>
-										<a href="<?php echo base_url('/category/'.$v['id']) ?>">
+										<a href="<?php echo generate_url('category', $v['id']); ?>">
 											<?php echo $v['displayname'];?>
 										</a>
 									</li>
@@ -68,7 +68,7 @@
 				</div>
 				<?php if($show_comment):?>
 					<div class="page-comment">
-    					<div class="ds-thread" data-thread-key="<?php echo $article_info->id;?>" data-title="<?php echo $article_info->title;?>" data-url="<?php echo base_url('/article/'.$article_info->id); ?>"></div>
+    					<div class="ds-thread" data-thread-key="<?php echo $article_info->id;?>" data-title="<?php echo $article_info->title;?>" data-url="<?php echo generate_url('article', $article_info->id); ?>"></div>
 					</div>
 				<?php endif;?>
 			</section>
@@ -80,12 +80,6 @@
 			<div class="clear-fix"></div>
 	    </div>
 	</main>
-	<?php $this->load->view('footer');?>
-	<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-	<script src="/public/plugins/syntaxhighlighter/scripts/shCore.js"></script>
-	<script src="/public/plugins/syntaxhighlighter/scripts/shAutoloader.js"></script>
-	<script src="/public/js/app.js?ver=<?php echo VER;?>"></script>
-	<script src="/public/js/article.js?ver=<?php echo VER;?>"></script>
-	<script src="/public/js/comment.js?ver=<?php echo VER;?>"></script>
+	<?php $this->load->view('footer', $page_header['js']);?>
 </body>
 </html>

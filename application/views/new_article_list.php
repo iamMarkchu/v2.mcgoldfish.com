@@ -5,7 +5,7 @@
 	<ul class="list-body">
 		<?php foreach($new_article_list as $article):?>
 		    <li>
-				<a href="<?php echo base_url('/article/'.$article['id']); ?>">
+				<a href="<?php echo generate_url('article', $article['id']); ?>">
 					<?php echo $article['title'];?>
 				</a>
 			</li>

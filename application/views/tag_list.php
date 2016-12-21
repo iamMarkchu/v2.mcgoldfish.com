@@ -5,7 +5,7 @@
 	<ul class="list-body">
 		<?php foreach($hot_tag as $tag) :?>
 		<li>
-			<a href="<{$item.requestpath}>">
+			<a href="<?php echo generate_url('tag', $tag['id']);?>">
 				<?php echo $tag['displayname'] ?>
 			</a>
 		</li>

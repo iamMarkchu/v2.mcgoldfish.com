@@ -70,3 +70,8 @@
     </div>
   </div>
 </footer>
+<?php if(!empty($footer)):?>
+  <?php foreach($footer as $js):?>
+      <script src="<?php echo base_url($js);?>"></script>
+  <?php endforeach;?>
+<?php endif;?>

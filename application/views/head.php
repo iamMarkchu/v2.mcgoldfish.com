@@ -7,5 +7,8 @@
 	<?php foreach($css as $k => $v):?>
 		<?php echo link_tag($v);?>
 	<?php endforeach; ?>
+	<?php foreach($js['header'] as $js):?>
+		<script src="<?php echo base_url($js);?>"></script>
+	<?php endforeach;?>
 </head>
 <body>

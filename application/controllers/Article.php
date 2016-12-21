@@ -5,9 +5,7 @@ class article extends CI_Controller
 {
 	public function index($id){
 		$this->load->model('article_model', 'article');
-
 		$data['article_info'] = $this->article->get_article_by_id($id);
-
 		$breadcrumb[] = ["url"=>"/","title"=>"首页"];
 		if(!empty($data['article_info']->category_info)){
 			$cate_info = $data['article_info']->category_info[0];
@@ -21,15 +19,34 @@ class article extends CI_Controller
 		$data['show_comment'] = true;
 		$data['hot_category'] = $this->db->query('select * from category where parentcategoryid = 0 order by displayorder limit 4')->result_array();
 		$data['hot_tag'] = $this->db->query('select * from tag order by displayorder limit 30')->result_array();
+
+		/**
+		 * 增加页面级别css,js,page meta
+		 */
+		$default_css = $this->config->item('default_css');
+		$default_css =  array_merge($this->config->item('default_css'), 
+									[
+										'/public/css/main_v2_blog.css?ver='.VER, 
+									 	'/public/plugins/syntaxhighlighter/styles/shCoreDefault.css?ver='.VER
+									]);
+		$default_js = $this->config->item('default_js');
+		$default_js['footer'] = array_merge($default_js['footer'], 
+											[
+												'/public/plugins/syntaxhighlighter/scripts/shCore.js', 
+											 	'/public/plugins/syntaxhighlighter/scripts/shAutoloader.js',
+											 	'/public/js/article.js?ver='. VER,
+											 	'/public/js/comment.js?ver='. VER,
+											]);
+		$page_meta = $this->db->query("select * from page_meta where modeltype = 'article' and status = 'yes' and optdataid ={$id}")->row();
 		$data['page_header'] = [
-								'css' => array_merge($this->config->item('default_css'), ['/public/css/main_v2_blog.css?ver='.VER, '/public/plugins/syntaxhighlighter/styles/shCoreDefault.css?ver='.VER]),
-								'js'  => [],
-								'meta' => [
-									'title' => '首页',
-									'description' => '123213',
-									'keyword' => '23'
-								],
-							];
+									'css' => $default_css,
+									'js'  => $default_js,
+									'meta' => [
+										'title' => isset($page_meta->pagetitle)? $page_meta->pagetitle: '',
+										'description' => isset($page_meta->pagedescription)? $page_meta->pagedescription: '',
+										'keyword' => isset($page_meta->pagekeyword)? $page_meta->pagekeyword: '',
+									],
+								];
 		$this->load->view('article', $data);
 	}
 }

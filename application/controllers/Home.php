@@ -13,7 +13,7 @@ class Home extends CI_Controller {
 		$data['new_article_list'] = $this->article->get_article_list('addtime', 10);
 		$data['page_header'] = [
 								'css' => $this->config->item('default_css'),
-								'js'  => [],
+								'js'  => $this->config->item('default_js'),
 								'meta' => [
 									'title' => '首页',
 									'description' => '123213',

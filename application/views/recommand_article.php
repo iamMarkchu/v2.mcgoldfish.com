@@ -6,20 +6,20 @@
       <ul class="ar-label">
         <?php foreach($article['tag_info'] as $k => $v):?>
         <li class="ar-label-<?php echo $k+1;?>">
-          <a href="<?php echo base_url('/tag/'.$v['id']);?>" title="">
+          <a href="<?php echo generate_url('tag', $v['id']);?>" title="">
             <?php echo $v['displayname'];?>
           </a>
         </li>
         <?php endforeach;?>
       </ul>
       <?php endif;?>
-      <a href="<?php echo base_url('/article/'.$article['id']);?>" class="ar-cover">
+      <a href="<?php echo generate_url('article', $article['id']);?>" class="ar-cover">
         <img src="http://img.mcgoldfish.com<?php echo $article['image'];?>" alt="" width="250" height="250" />
       </a>
     </div>
     <div class="panel-body">
       <h2>
-        <a href="<?php echo base_url('/article/'.$article['id']);?>" class="data-article-url">
+        <a href="<?php echo generate_url('article', $article['id']);?>" class="data-article-url">
           <?php echo $article['title']?>
         </a>
       </h2>
@@ -34,7 +34,7 @@
         </li>
         <li>
           <i class="fa fa-clock-o" aria-hidden="true"></i>
-          <span><?php echo date('m-d', strtotime($article['addtime'])); ?></span>
+          <span><?php echo format_date_v2($article['addtime']); ?></span>
         </li>
       </ul>
       <ul class="pull-right user-info">
@@ -50,5 +50,5 @@
       <div class="clear-fix"></div>
     </div>
   </li>
-  <?php endforeach; ?>
+  <?php endforeach;?>
 </ul>
