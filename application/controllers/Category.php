@@ -5,6 +5,7 @@ class Category extends MY_Controller
 {
 	public function index($id)
 	{
+		$this->load->helper('date');
 		$this->load->model('Category_model', 'category');
 		$category_info = $this->category->get_category_by_id($id);
 		$category_info['sub_category_info'] = $this->category->get_sub_category_by_pid($id);

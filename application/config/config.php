@@ -76,7 +76,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language']	= 'simplified-chinese';
 
 /*
 |--------------------------------------------------------------------------
@@ -515,6 +515,7 @@ $config['proxy_ips'] = '';
 define('MARK_DEBUG', TRUE);
 define('VER', MARK_DEBUG?rand(0,50000): 2016122202);
 define('SITE_FULL_NAME', 'Mcgoldfish');
+$config['backend_url'] = 'http://backend.mcgoldfish.com/index.php';
 $config['default_css'] = [
 							'/public/css/main_v2.css?ver'.VER,
 							'/public/css/font-awesome/css/font-awesome.min.css',

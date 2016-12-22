@@ -4,8 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Home extends MY_Controller {
 
 	public function index()
-	{
-		
+	{	
+		$this->load->helper('date');
 		$this->load->model('article_model', 'article');
 		$this->data['recommand_list'] = $this->article->get_article_list();
 		$this->data['new_article_list'] = $this->article->get_article_list('addtime', 10);

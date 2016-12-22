@@ -30,22 +30,22 @@
         <div class="panel-body">
           <ul>
             <li>
-              <a href="#">所有文章</a>
+              <a href="<?php echo base_url('/all/article');?>">所有文章</a>
             </li>
             <li>
-              <a href="#">所有标签</a>
+              <a href="<?php echo base_url('/all/tag');?>">所有标签</a>
             </li>
             <li>
-              <a href="#">所有类别</a>
+              <a href="<?php echo base_url('/all/category');?>">所有类别</a>
             </li>
             <li>
-              <a href="#">最新文章</a>
+              <a href="<?php echo base_url('/all/new');?>">最新文章</a>
             </li>
             <li>
-              <a href="#">所有图片</a>
+              <a href="<?php echo base_url('/all/img');?>">所有图片</a>
             </li>
             <li>
-              <a href="#">后台入口</a>
+              <a href="<?php echo $this->config->item('backend_url');?>">后台入口</a>
             </li>
             <div class="clear-fix"></div>
           </ul>

@@ -34,7 +34,7 @@
         </li>
         <li>
           <i class="fa fa-clock-o" aria-hidden="true"></i>
-          <span><?php echo format_date_v2($article['addtime']); ?></span>
+          <span><?php echo timespan(strtotime($article['addtime']), time(), 1); ?>前</span>
         </li>
       </ul>
       <ul class="pull-right user-info">
