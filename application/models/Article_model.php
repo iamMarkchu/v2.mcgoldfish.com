@@ -1,20 +1,14 @@
 <?php 
 class Article_model extends CI_Model {
 
-    public function __construct()
-    {
-    	$this->load->database();
-        parent::__construct();
-    }
-
     public function get_article_by_id($id)
     {
     	$article_info = $this->db->from('article')
     					->where('id', $id)
     					->get()
-    					->row();
-    	$article_info->tag_info = $this->get_article_tag_list($id);
-    	$article_info->category_info = $this->get_article_category_list($id);
+    					->row_array();
+    	$article_info['tag_info'] = $this->get_article_tag_list($id);
+    	$article_info['category_info'] = $this->get_article_category_list($id);
     	return $article_info;
     }
 

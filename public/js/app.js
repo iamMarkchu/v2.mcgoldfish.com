@@ -52,9 +52,23 @@ $(function() {
         	}
         });
 	});
+	$('.search_btn').click(function(){
+		if($('.search-input').val() != ''){
+			$('.search_form').submit();
+		}else{
+			alert('搜索关键词不能为空!');
+		}
+	});
+	$('.search-input').focus(function(){
+		
+	});
+	$('.search-input').blur(function(){
+		
+	});
 	$('.hot-comment').click(function(){
 		var articleurl = $(this).parents('.panel-footer').siblings('.panel-body').find('a.data-article-url').attr('href');
 		window.location.href = articleurl + "#comment-block";
-	});
+	}); 
 });
+
 	

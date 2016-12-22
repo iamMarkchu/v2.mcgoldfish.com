@@ -87,21 +87,54 @@ h2{
 .cate-list span.label-color-2{color: #259B24;}
 .cate-list span.label-color-3{color: #673AB7;}
 
-header {border-bottom: 1px solid #e0e0e0;border-top: 3px solid #22b38a;}
+header {border-bottom: none;border-top: 3px solid #22b38a;}
 header .header-left{float: left; width: 75%;position: relative;}
 header .header-right{float: left; width: 25%;}
 header .logo {padding: 1.25em 0;margin-right: 1em;}
 header .logo p {font-size: 1.5em;color: #db3b06;font-size: bold;}
 header .logo p span {color: #22b38a;font-size: bold;}
 header ul.some-link li {float: left;font-size: 1.125em;padding: 23.5px 15px 23.5px 0;}
-header .top-search{border:1px solid #e0e0e0;padding: .25em;border-radius: 5px;float:left;width: 5.6em;position: relative;margin:1.125em 0 1.125em 1.25em;}
-header .top-search input{border:none;outline: none;padding: .25em;width: 3.125em;position: relative;left: 0px;}
+header .top-search{border:1px solid #e0e0e0;padding: .25em;border-radius: 5px;float:left;width: 8em;position: relative;margin:1.125em 0 1.125em 1.25em;}
+header .top-search input{border:none;outline: none;padding: .25em;width: 6em;position: relative;left: 0px;}
 header .top-search a{position: absolute;right: .625em;top:.3125em;}
 header .top-search a i{color: #e0e0e0;}
 header ul.some-link.my-cate li:hover>a,header ul.some-link.my-cate li:hover{color:#fff;background-color: #22b38a;cursor: pointer;}
 header ul.some-link.my-cate li{position: relative;padding-left: 1em;}
 header .exp-menu{position: absolute;right: .625em;top:1em;display: none;}
 header .exp-menu i{font-size: 1.25em;color: #22b38a;}
+
+/**login dropdown**/
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 40px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
 main {background-color: #ebf0ee;padding-top: 3.75em;}
 main ul.article-list{overflow: hidden;width: 100%;}

@@ -422,7 +422,7 @@ $config['standardize_newlines'] = FALSE;
 |          for backwards compatibility purposes!
 |
 */
-$config['global_xss_filtering'] = FALSE;
+$config['global_xss_filtering'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------
@@ -512,40 +512,8 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
-
-$config['nav_list'] = [
-    			'/code.html' => [
-                      'displayname' => '代码',
-                      'bindCategoryList' => [10304,10300,10299,10298],
-                      'description' => '写代码是一件快乐的事情，因为写代码的时候什么都不会去想，烦恼自然也丢到脑后去了，非常的开心',
-                      'icon' => '<i class="fa fa-code" aria-hidden="true"></i>'
-                    ],
-    			'/work.html' =>	[
-    				  'displayname' => '工作',
-                      'bindCategoryList' => [],
-                      'description' => '',
-                      'icon' => '<i class="fa fa-gavel" aria-hidden="true"></i>'
-    				],
-    			'/game.html' =>	[
-    				  'displayname' => '游戏',
-                      'bindCategoryList' => [10302],
-                      'description' => '',
-                      'icon' => '<i class="fa fa-gamepad" aria-hidden="true"></i>'
-    				],
-    			'/movie.html' =>	[
-    				  'displayname' => '电影',
-                      'bindCategoryList' => [],
-                      'description' => '',
-                      'icon' => '<i class="fa fa-video-camera" aria-hidden="true"></i>'
-    				],
-    			'/music.html' =>	[
-    				  'displayname' => '音乐',
-                      'bindCategoryList' => [],
-                      'description' => '',
-                      'icon' => '<i class="fa fa-music" aria-hidden="true"></i>'
-    				],
-    			   ];
-define('VER', '2016122001');
+define('MARK_DEBUG', TRUE);
+define('VER', MARK_DEBUG?rand(0,50): 2016122202);
 define('SITE_FULL_NAME', 'Mcgoldfish');
 $config['default_css'] = [
 							'/public/css/main_v2.css?ver'.VER,
