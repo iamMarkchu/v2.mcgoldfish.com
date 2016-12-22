@@ -66,11 +66,29 @@
 						<div class="clear-fix"></div>
 					</div>
 				</div>
-				<?php if($show_comment):?>
-					<div class="page-comment">
-    					<div class="ds-thread" data-thread-key="<?php echo $article_info['id'];?>" data-title="<?php echo $article_info['title'];?>" data-url="<?php echo generate_url('article', $article_info['id']); ?>"></div>
-					</div>
-				<?php endif;?>
+				<div class="page-comment panel-test article-panel">
+    				<h3 data-toggle="comment-block">评论区</h3>
+    				<div class="reply-box">
+    					<a href="" class="reply-avatar">
+    						<img src="/public/images/default_user.png" class="img-circle" alt="" width="50" height="50">
+    					</a>
+    					<form action="/comment/insert" method="post" class="reply-form">
+    						<input type="hidden" name="optdataid" value="<?php echo $article_info['id']?>">
+    						<input type="hidden" name="datatype" value="article">
+    						<input type="hidden" name="url" value="<?php echo current_url();?>">
+    						<div class="reply-text">
+	    						<textarea name="comment_info"></textarea>
+	    					</div>
+	    					<div class="reply-footer">
+	    						<a class="pull-right reply-btn">发布</a>
+	    					</div>
+    					</form>
+    				</div>
+    				<div class="commen-list">
+    					<h5>评论列表</h5>
+    					<?php $this->load->view('public/block_comment', $comment_list);?>
+    				</div>
+				</div>
 			</section>
 			<aside>
 				<?php $this->load->view('public/category_list', $hot_category);?>

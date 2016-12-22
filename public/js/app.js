@@ -3,8 +3,8 @@ $(function() {
 	if(url.indexOf('#')){
 		tmp = url.split('#');
 		block = tmp[1];
-		if($('h2[data-toggle=\''+block+'\']').length){
-			sHeight = $('h2[data-toggle=\''+block+'\']').offset().top-$(document).scrollTop();
+		if($('h3[data-toggle=\''+block+'\']').length){
+			sHeight = $('h3[data-toggle=\''+block+'\']').offset().top-$(document).scrollTop();
 			$("html,body").animate(
 				{
 					scrollTop: sHeight

@@ -31,14 +31,18 @@ class Article_model extends CI_Model {
 	public function get_article_tag_list($id)
 	{
 		$sql = "select t.id,t.displayname from tag_mapping as tm left join tag as t on tm.tagid = t.id where tm.datatype = 'article' and tm.`status` = 'active' and tm.optdataid = {$id}";
-		$query = $this->db->query($sql);
-		return $query->result_array();
+		return $this->db->query($sql)->result_array();
 	}
 
 	public function get_article_category_list($id)
 	{
 		$sql = "select c.id,c.parentcategoryid,c.displayname from category_mapping as cm left join category as c on cm.categoryid = c.id where cm.datatype = 'article' and cm.`status` = 'active' and cm.optdataid = {$id}";
-		$query = $this->db->query($sql);
-		return $query->result_array();
+		return $this->db->query($sql)->result_array();
+	}
+
+	public function get_comment_by_aid($aid)
+	{
+		$sql = "select * from comment where datatype= 'article' and optdataid = {$aid} order by id desc";
+		return $this->db->query($sql)->result_array();
 	}
 }

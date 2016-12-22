@@ -142,7 +142,7 @@ main ul.article-list li {width: 45%;float: left;margin-right: 4%;}
 main .article-list ul.pull-right.user-info li{margin-right: 0; margin-left: 20px;}
 main .article-list ul.user-info li{width: auto;margin-right: 20px;}
 main .article-list ul.ar-label li{width: auto;margin-right: 10px;}
-main section{float: left;width: 75%;}
+main section{float: left;width: 75%;margin-bottom: 20px;}
 main section .panel-body h2{height: 46px;}
 main aside{float: left;width: 25%;}
 .panel-test{ border: none; }

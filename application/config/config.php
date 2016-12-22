@@ -35,7 +35,7 @@ $config['base_url'] = 'http://l.mv2.com';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -513,7 +513,7 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 define('MARK_DEBUG', TRUE);
-define('VER', MARK_DEBUG?rand(0,50): 2016122202);
+define('VER', MARK_DEBUG?rand(0,50000): 2016122202);
 define('SITE_FULL_NAME', 'Mcgoldfish');
 $config['default_css'] = [
 							'/public/css/main_v2.css?ver'.VER,

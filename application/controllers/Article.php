@@ -6,7 +6,7 @@ class Article extends MY_Controller
 	public function index($id){
 		$this->load->model('article_model', 'article');
 		$this->data['article_info'] = $this->article->get_article_by_id($id);
-
+		$this->data['comment_list'] = $this->article->get_comment_by_aid($id);
 		/**
 		 * 增加页面级别css,js,page meta
 		 */

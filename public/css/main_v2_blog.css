@@ -31,14 +31,37 @@
     padding-right: 10px;
 }
 .page-comment{
-	width: 95%;
-	height: 100%;
+
 }
-
-
+.page-comment h3{
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #e0e0e0;
+}
+.reply-box{
+	position: relative;
+	padding-left: 60px;
+}
+.reply-box .reply-avatar{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.reply-box .reply-text{padding: 5px;}
+.reply-box .reply-text textarea{width: 100%;height: 54px;}
+.reply-text span{font-size: 13px;color: #d32;}
+.reply-text p{font-size: 13px;margin:.5em 0;line-height: 1.5em;}
+.reply-box .reply-footer{overflow: hidden;}
+.commen-list {margin-top: 20px;}
+.commen-list h5{
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+.reply-box {border-bottom: 1px solid #e0e0e0;padding-bottom: 15px;}
+.commen-list .reply-box{margin-top: 10px;}
+.commen-list .reply-footer{color: #999;}
+.commen-list .reply-footer .r_time{margin-left: 10px;}
 .img-circle {border-radius: 50%;}
-
-.panel-body .page-comment{padding: 0 15px;}
 @media (max-width: 992px){
     
 }
