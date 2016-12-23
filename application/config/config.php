@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://l.mv2.com';
+$config['base_url'] = 'http://www.mcgoldfish.com';
 
 /*
 |--------------------------------------------------------------------------
@@ -512,8 +512,8 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
-define('MARK_DEBUG', TRUE);
-define('VER', MARK_DEBUG?rand(0,50000): 2016122202);
+define('MARK_DEBUG', FALSE);
+define('VER', MARK_DEBUG?rand(0,50000): 2016122301);
 define('SITE_FULL_NAME', 'Mcgoldfish');
 $config['backend_url'] = 'http://backend.mcgoldfish.com/index.php';
 $config['default_css'] = [
