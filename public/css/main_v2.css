@@ -45,6 +45,9 @@ h2{
 .panel>.panel-heading{
     color: #333;
 }
+.panel-default{
+    width: 85%;background-color: #fff;padding: 15px 30px;
+}
 .panel-heading{
     border-bottom: 1px solid transparent;
     border-top-left-radius: 3px;

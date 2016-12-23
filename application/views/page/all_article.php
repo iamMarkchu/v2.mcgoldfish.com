@@ -3,12 +3,20 @@
 	<main>
 	    <div class="page-wrap">
 			<section>
-				<?php $this->load->view('public/recommand_article');?>
+				<div class="panel panel-default panel-test type-all">
+					<h1>所有文章</h1>
+					<ul>
+						<?php foreach($all_article_list as $k => $v):?>
+						<li>
+							<?php echo $k+1;?>. <a href="<?php echo generate_url('article', $v['id']);?>"><?php echo $v['title'];?></a>
+						</li>
+						<?php endforeach;?>
+					</ul>
+				</div>	
 			</section>
 			<aside>
 				<?php $this->load->view('public/category_list', $hot_category);?>
 				<?php $this->load->view('public/tag_list', $hot_tag);?>
-				<?php $this->load->view('public/new_article_list', $new_article_list);?>
 				<?php $this->load->view('public/friend_link_list');?>
 			</aside>
 			<div class="clear-fix"></div>

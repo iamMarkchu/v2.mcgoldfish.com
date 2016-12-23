@@ -66,7 +66,7 @@
 						<div class="clear-fix"></div>
 					</div>
 				</div>
-				<div class="page-comment panel-test article-panel">
+				<div class="page-comment panel-default">
     				<h3 data-toggle="comment-block">评论区</h3>
     				<div class="reply-box">
     					<a href="" class="reply-avatar">
